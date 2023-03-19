@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+ <h1>
+    Sample login site
+</h1>
+{% if user.is_authenticated %}
+<h3>Hello {{name}}</h3>
+<h4> You are logged in</h4>
+<button type="submit"><a href="http://127.0.0.1:8000/signout/">SignOut</a></button>
+{% else %}
+<button class="signup"itype="submit"><a href="signup/">SignUp</a></button>
+<button class="signin" type="submit"><a href="signin/">SignIn</a></button>
+{% endif %}
+
+
+</body>
+</html>
